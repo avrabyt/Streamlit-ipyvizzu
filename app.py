@@ -23,18 +23,16 @@ def create_chart():
     chart.animate(data)
 
     chart.animate(
-        Config(
-            {
+        Config({
                 "channels": {
                     "y": "Country",
-                    "x": ["Population (2020)","Subregion"],
-                    
+                    "x": ["Population (2020)","Subregion"]                    
                 }
             }),
             Style({
                 "plot":{"paddingLeft": "5em"}
             })
-        ),y={
+            ,y={
             "duration": 3,
             
         }
