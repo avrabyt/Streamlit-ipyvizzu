@@ -30,7 +30,10 @@ def create_chart():
                     "x": ["Population (2020)","Subregion"],
                     
                 }
-            }
+            },
+            Style({
+                "plot":{"paddingLeft": "5em"}
+            })
         ),y={
             "duration": 3,
             
