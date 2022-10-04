@@ -56,15 +56,10 @@ def create_chart():
                 "label": None,
                 "size" : None,
                 "geometry": "rectangle"
-            })
-        
+            })        
     )
     
-        chart.animate(
-        Config({
-             "x": "Population (2020)",
-            )},
-        )
+
        
     return chart._repr_html_(),data_frame
 
