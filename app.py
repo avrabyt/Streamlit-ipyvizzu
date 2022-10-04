@@ -13,7 +13,7 @@ st.title("Streamlit :balloon: + ipyvizzu 📊")
 
 def create_chart():
     # initialize chart
-    chart = Chart(width="700px", height="700px", display="manual")
+    chart = Chart(width="700px", height="600px", display="manual")
     # add data
     data = Data()
     
@@ -21,88 +21,18 @@ def create_chart():
     data.add_data_frame(data_frame)
 
     chart.animate(data)
+
     chart.animate(
-        Config(
-            {
+        Config({
                 "channels": {
-                    "y": {"set": ["Country"]},
-                    "x": {"set": ["Population (2020)"]},
-                    #"color": {"set": ["Subregion"]},
-                    #"y" : {"detach" : ["Subregion", "Country"]},
-                    #"y": {"attach": ["Country"]},
-                    
-                    
-                    
-                    
+                    "y": "Country",
+                    "x": ["Population (2020)","Subregion"]                    
                 }
-            }
-        ),y={
-            "duration": 3,
-            #"delay": 3,
-            
-        }
-    )
-
-
-
-    chart.animate(
-        Config(
-            {
-                "channels": {
-                    
-                    #"y" : {"detach" : {"Country"}},
-                    #"y": {"attach": ["Subregion"]},
-                    "x": {"set": ["Population (2020)"]},
-                    "y": {"set": ["Subregion", "Country"]},
-                    "color": {"set": ["Subregion"]},
-                    
-                    
-                    
-                },
-                "title": "Bar Chart",
-                "geometry": "rectangle",
-                "orientation": "vertical",
-            }
-        ),
-        y={
-            "duration": 3,
-            "delay": 3,
-            
-        }
-    )
-
-
-    chart.animate(
-        Config(
-            {
-                "channels": {
-                    #"y": {"set": ["Subregion"]},
-                    "y": {"detach": ["Country"]},
-                    "x": {"set": ["Population (2020)"]},
-                    #"y": {"attach": ["Subregion"]},
-                    "label": {"set": ["Population (2020)"]},
-                
-                    
-                    #"size": {"set": None},
-                }
-            }
-        )
-        
-    )
-    chart = Chart(width="700px", height="600px", display="manual")
-
-    chart.animate(data)
-
-    chart.animate(
-        Config(
-            {
-                "channels": {
-                    "y": {"set": ["Country"]},
-                    "x": {"set": ["Population (2020)"]},
-                    
-                }
-            }
-        ),y={
+            }),
+            Style({
+                "plot":{"paddingLeft": "12em"}
+            })
+            ,y={
             "duration": 3,
             
         }
@@ -111,32 +41,34 @@ def create_chart():
     chart.animate(
         Config(
             {
-                "channels": {
                     "y": None,
                     "x": None,
-                    "size": {"set": ["Country","Population (2020)"]},
-                    "label": {"set": ["Country"]},
-                    "color": {"set": ["Subregion"]},
-                },"geometry": "circle"
+                    "size": ["Country","Population (2020)"],
+                    "label": "Country",
+                    "color": "Subregion",
+                    "geometry": "circle"
             }
         )
     )
     chart.animate(
-        Config(
-            {
-                "channels": {
-                    "y": {"set": ["Subregion"]},
-                    "x": {"set": ["Population (2020)"]},
-                    "y": {"set": ["Subregion"]},
-                    "label": {"set": ["Population (2020)"]},
-                "size" : None
-                    
-                    #"size": {"set": None},
-                },"geometry": "rectangle"
-            },
-        )
-        
+        Config({
+                "y": "Subregion",
+                "x": ["Country","Population (2020)"],
+                "label": None,
+                "size" : None,
+                "geometry": "rectangle"
+            })        
     )
+    
+    chart.animate(
+        Config({
+             "x": "Population (2020)",
+            "label": "Population (2020)"
+            }),
+        )
+    
+
+       
     return chart._repr_html_(),data_frame
 
 if st.button("Rerun ♻️ "):
