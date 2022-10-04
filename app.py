@@ -63,7 +63,7 @@ def create_chart():
         Config({
              "x": "Population (2020)",
             "label": "Population (2020)"
-            )},
+            }),
         )
     
 
