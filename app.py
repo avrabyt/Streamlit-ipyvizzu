@@ -26,7 +26,7 @@ def create_chart():
         Config(
             {
                 "channels": {
-                    "y": "Country"},
+                    "y": "Country",
                     "x": ["Population (2020)","Subregion"],
                     
                 }
