@@ -59,6 +59,13 @@ def create_chart():
             })        
     )
     
+    chart.animate(
+        Config({
+             "x": "Population (2020)",
+            "label": "Population (2020)"
+            )},
+        )
+    
 
        
     return chart._repr_html_(),data_frame
