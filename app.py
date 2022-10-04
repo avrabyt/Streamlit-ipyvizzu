@@ -50,26 +50,22 @@ def create_chart():
         )
     )
     chart.animate(
-        Config(
-            {
+        Config({
                 "y": "Subregion",
                 "x": ["Country","Population (2020)"],
                 "label": None,
                 "size" : None,
                 "geometry": "rectangle"
-            }
-        )
+            })
         
     )
     
         chart.animate(
-        Config(
-            {
-                    "x": "Population (2020)",
-            },
+        Config({
+             "x": "Population (2020)",
+            )},
         )
-        
-    )
+       
     return chart._repr_html_(),data_frame
 
 if st.button("Rerun ♻️ "):
