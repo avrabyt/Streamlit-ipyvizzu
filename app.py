@@ -55,7 +55,7 @@ def create_chart():
                 "y": "Subregion",
                 "x": ["Country","Population (2020)"],
                 "label": None,
-                "size" : None
+                "size" : None,
                 "geometry": "rectangle"
             }
         )
