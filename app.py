@@ -30,7 +30,7 @@ def create_chart():
                 }
             }),
             Style({
-                "plot":{"paddingLeft": "5em"}
+                "plot":{"paddingLeft": "10em"}
             })
             ,y={
             "duration": 3,
