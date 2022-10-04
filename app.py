@@ -13,7 +13,7 @@ st.title("Streamlit :balloon: + ipyvizzu 📊")
 
 def create_chart():
     # initialize chart
-    chart = Chart(width="700px", height="700px", display="manual")
+    chart = Chart(width="700px", height="600px", display="manual")
     # add data
     data = Data()
     
@@ -21,118 +21,51 @@ def create_chart():
     data.add_data_frame(data_frame)
 
     chart.animate(data)
+
     chart.animate(
         Config(
             {
                 "channels": {
-                    "y": {"set": ["Country"]},
-                    "x": {"set": ["Population (2020)"]},
-                    #"color": {"set": ["Subregion"]},
-                    #"y" : {"detach" : ["Subregion", "Country"]},
-                    #"y": {"attach": ["Country"]},
-                    
-                    
-                    
+                    "y": "Country"},
+                    "x": ["Population (2020)","Subregion"],
                     
                 }
             }
         ),y={
             "duration": 3,
-            #"delay": 3,
             
         }
     )
 
-
-
     chart.animate(
         Config(
             {
-                "channels": {
-                    
-                    #"y" : {"detach" : {"Country"}},
-                    #"y": {"attach": ["Subregion"]},
-                    "x": {"set": ["Population (2020)"]},
-                    "y": {"set": ["Subregion", "Country"]},
-                    "color": {"set": ["Subregion"]},
-                    
-                    
-                    
-                },
-                "title": "Bar Chart",
-                "geometry": "rectangle",
-                "orientation": "vertical",
+                    "y": None,
+                    "x": None,
+                    "size": ["Country","Population (2020)"],
+                    "label": "Country",
+                    "color": "Subregion",
+                    "geometry": "circle"
             }
-        ),
-        y={
-            "duration": 3,
-            "delay": 3,
-            
-        }
+        )
     )
-
-
     chart.animate(
         Config(
             {
-                "channels": {
-                    #"y": {"set": ["Subregion"]},
-                    "y": {"detach": ["Country"]},
-                    "x": {"set": ["Population (2020)"]},
-                    #"y": {"attach": ["Subregion"]},
-                    "label": {"set": ["Population (2020)"]},
-                
-                    
-                    #"size": {"set": None},
-                }
+                "y": "Subregion",
+                "x": ["Country","Population (2020)"],
+                "label": None,
+                "size" : None
+                "geometry": "rectangle"
             }
         )
         
     )
-    chart = Chart(width="700px", height="600px", display="manual")
-
-    chart.animate(data)
-
-    chart.animate(
+    
+        chart.animate(
         Config(
             {
-                "channels": {
-                    "y": {"set": ["Country"]},
-                    "x": {"set": ["Population (2020)"]},
-                    
-                }
-            }
-        ),y={
-            "duration": 3,
-            
-        }
-    )
-
-    chart.animate(
-        Config(
-            {
-                "channels": {
-                    "y": None,
-                    "x": None,
-                    "size": {"set": ["Country","Population (2020)"]},
-                    "label": {"set": ["Country"]},
-                    "color": {"set": ["Subregion"]},
-                },"geometry": "circle"
-            }
-        )
-    )
-    chart.animate(
-        Config(
-            {
-                "channels": {
-                    "y": {"set": ["Subregion"]},
-                    "x": {"set": ["Population (2020)"]},
-                    "y": {"set": ["Subregion"]},
-                    "label": {"set": ["Population (2020)"]},
-                "size" : None
-                    
-                    #"size": {"set": None},
-                },"geometry": "rectangle"
+                    "x": "Population (2020)",
             },
         )
         
