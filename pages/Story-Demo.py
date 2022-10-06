@@ -9,7 +9,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 # Codes shamelessly adapted from here 
 # - https://github.com/alod83/data-science/blob/master/DataVisualization/ipyvizzu/ipyvizzu%20Example.ipynb
 st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
-
+st.sidebar.title("Story-Demo")
 st.title("Streamlit :balloon: + ipyvizzu 📊")
 
 def create_chart():

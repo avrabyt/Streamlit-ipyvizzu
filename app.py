@@ -8,16 +8,16 @@ ssl._create_default_https_context = ssl._create_unverified_context
 # Codes shamelessly adapted from here 
 # - https://github.com/alod83/data-science/blob/master/DataVisualization/ipyvizzu/ipyvizzu%20Example.ipynb
 st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
-
+st.sidebar.title("Basic-Demo")
 st.title("Streamlit :balloon: + ipyvizzu 📊")
-
+st.sidebar.button("Animate ♻️ ")
 def create_chart():
     # initialize chart
     chart = Chart(width="700px", height="600px", display="manual")
     # add data
     data = Data()
     
-    data_frame = pd.read_csv('eu_regions.csv',sep=';')
+    data_frame = pd.read_csv('Data/eu_regions.csv',sep=';')
     data.add_data_frame(data_frame)
 
     chart.animate(data)
@@ -71,8 +71,7 @@ def create_chart():
        
     return chart._repr_html_(),data_frame
 
-if st.button("Rerun ♻️ "):
-    pass
+
 CHART,df = create_chart()
 html(CHART, width=700, height=600)
 with st.expander(label = "Resources", expanded=False):
