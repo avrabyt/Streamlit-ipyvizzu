@@ -167,7 +167,7 @@ with col3.container():
     html(chart._repr_html_(),width=700, height=600)
 
 
-with st.expander(label="Select and exploration for specific year", expanded=True):
+with st.expander(label=" ", expanded=True):
     col1,col2,col3 = st.columns(3)
     year_country2 = data2.groupby('year_added')['country'].value_counts().reset_index(name='counts')
     year_country2["year_added"] = year_country2["year_added"].astype(str)
