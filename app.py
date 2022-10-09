@@ -11,6 +11,7 @@ st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
 st.sidebar.title("Basic-Demo")
 st.title("Streamlit :balloon: + ipyvizzu 📊")
 st.sidebar.button("Animate ♻️ ")
+# @st.cache()
 def create_chart():
     # initialize chart
     chart = Chart(width="700px", height="600px", display="manual")
