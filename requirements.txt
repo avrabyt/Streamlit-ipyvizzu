@@ -3,3 +3,4 @@ ipyvizzu-story
 pandas
 streamlit
 numpy
+streamlit_extras
