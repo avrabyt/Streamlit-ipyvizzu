@@ -4,3 +4,4 @@ pandas
 streamlit
 numpy
 streamlit_extras
+pyyaml
