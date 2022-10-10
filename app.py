@@ -113,5 +113,5 @@ with st.sidebar:
         icon="github",  # Some icons are available... like Streamlit!
         url="https://github.com/vizzuhq/ipyvizzu",
     )
-from streamlit_extras.app_logo import add_logo
-add_logo("https://vizzuhq.com/images/icons/ipyvizzu_button.png")
+# from streamlit_extras.app_logo import add_logo
+# add_logo("https://vizzuhq.com/images/icons/ipyvizzu_button.png")
