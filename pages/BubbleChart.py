@@ -3,7 +3,10 @@ from ipyvizzu import Chart, Data, Config, Style
 from streamlit.components.v1 import html
 import streamlit as st
 from streamlit_extras.dataframe_explorer import dataframe_explorer 
+from page_config import standard_page_widgets
 
+# Add this on top of any page to make mpa-config work!
+standard_page_widgets()
 def BubbleChart(df:pd.DataFrame):
     ''' Create BubbleChart
     Parameters
@@ -63,7 +66,7 @@ def load_data(data_path:str):
     return pd.read_csv(data_path, dtype={"Year": str, "Timeseries": str})
 
 # ------ App ----------
-st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
+# st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
 st.sidebar.title("Bubble Chart-Demo")
 data_path = "Data/chart_types_eu.csv"
 df = load_data(data_path=data_path)

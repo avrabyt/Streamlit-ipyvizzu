@@ -6,9 +6,12 @@ from streamlit.components.v1 import html
 import streamlit as st
 import numpy as np
 from collections import Counter
+from page_config import standard_page_widgets
 
+# Add this on top of any page to make mpa-config work!
+standard_page_widgets()
 
-st.set_page_config(page_title="Streamlit-ipyvizzu", layout="wide")
+# st.set_page_config(page_title="Streamlit-ipyvizzu", layout="wide")
 st.sidebar.title("Netflix-EDA")
 data = pd.read_csv('Data/netflix_titles.csv')
 with st.expander("Expand to check the data  ⤵️"):

@@ -1,0 +1,31 @@
+pages:
+  - page_name: Streamlit-ipyvizzu 
+    icon: 🎈
+    script_path: app.py
+    layout: wide  # By default, layout is 'centered' for all pages. See all the default values in page_config.py
+sections:
+  - name: Examples ⤵️
+    icon: 📊
+    pages:
+      - page_name: Example 1 (Story)
+        icon: 🎥
+        date_added: 2022-07-04  # If younger than 30 days, the page name will be augmented with a neat :new: emoji!
+        script_path: pages/Story-Demo.py
+        layout: wide
+      - page_name: Example 2 (Bubble-Chart)  # Explicit naming here overwrites the name inferred from script_path
+        icon: 🫧
+        script_path: pages/BubbleChart.py
+        layout: wide
+      - page_name : Example 3 (EDA)
+        icon: 🧐
+        script_path: pages/Netflix-EDA.py
+        layout: wide
+  - name: More Examples (Coming soon ...)
+    icon: 💻
+    pages:
+      - page_name: Example three
+        icon: 🦇
+        visible: false
+      - page_name: Old App
+        icon: 💀
+        visible: false  # This app will not appear in the menu!

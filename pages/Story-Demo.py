@@ -4,13 +4,11 @@ from ipyvizzu import Data, Config, Style
 from ipyvizzustory import Story, Slide, Step
 import ssl
 import streamlit as st 
+from page_config import standard_page_widgets
 
+# Add this on top of any page to make mpa-config work!
+standard_page_widgets()
 ssl._create_default_https_context = ssl._create_unverified_context  
-# Codes shamelessly adapted from here 
-# - https://github.com/alod83/data-science/blob/master/DataVisualization/ipyvizzu/ipyvizzu%20Example.ipynb
-st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
-st.sidebar.title("Story-Demo")
-st.title("Streamlit :balloon: + ipyvizzu 📊")
 
 def create_chart():
     # initialize chart
@@ -129,7 +127,11 @@ def create_chart():
 
 CHART,df = create_chart()
 html(CHART, width=700, height=600)
-
-st.markdown('''
-            [Source](https://twitter.com/VizzuHQ/status/1575473747599007744)
-            ''')       
+    
+from streamlit_extras.mention import mention
+with st.sidebar:
+    mention(
+        label="Resources",
+        icon="twitter",  # Some icons are available... like Streamlit!
+        url="https://twitter.com/VizzuHQ/status/1575473747599007744",
+    )
