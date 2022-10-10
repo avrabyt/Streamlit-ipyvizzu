@@ -27,10 +27,10 @@ class Config:
             return self.script_path
 
         if self.is_section:
-            return "streamlit_app.py"
+            return "app.py"
 
-        if self.standard_page_name.lower() == "streamlit_app":
-            return "streamlit_app.py"
+        if self.standard_page_name.lower() == "app":
+            return "app.py"
 
         return f"pages/{self.standard_page_name.lower()}.py"
 
@@ -130,7 +130,7 @@ def overwrite_page_config():
         page.standard_page_name: page for page in page_config_overrides
     }
 
-    # Get the page list dictionary from native streamlit (streamlit_app.py + pages/*.py)
+    # Get the page list dictionary from native streamlit (app.py + pages/*.py)
     page_config = get_all_pages()
 
     # Empty the current page list
@@ -203,7 +203,7 @@ def get_all_pages() -> Dict[str, Dict[str, str]]:
         }
     }
     """
-    return get_pages("streamlit_app.py")
+    return get_pages("app.py")
 
 
 def get_page_name() -> str:
