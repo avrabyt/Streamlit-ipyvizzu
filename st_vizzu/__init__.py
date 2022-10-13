@@ -1,11 +1,24 @@
 """
 ipyvizzu wrapper for Streamlit web-apps!
 """
-from ipyvizzu import Chart, Data, Config
-from typing import List
+from ipyvizzu import Chart, Data, Config, Style
+from typing import Dict, List
 import pandas as pd
 from streamlit.components.v1 import html
 
+def vizzu_plot(HTML,
+            width : int = 700,
+            height : int = 600
+            ):
+    ''' Streamlit API to embed Vizzu HTML string 
+    Parameters
+    -----------
+    HTML : String
+    width : Int
+    height : Int    
+    '''
+    return html(HTML,width=width,height=height)
+    
 def bar_chart(DataFrame:pd.DataFrame,
             x: List,
             y: List,
@@ -25,6 +38,9 @@ def bar_chart(DataFrame:pd.DataFrame,
         Vizzu chart width
     height : String
         Vizzu chart height
+    Return
+    -------
+    chart : ipyvizzu object
     '''
     data = Data()
     data.add_data_frame(DataFrame)
@@ -39,66 +55,112 @@ def bar_chart(DataFrame:pd.DataFrame,
             "title" : title,
         })
     )
-    html = chart._repr_html_()
+    return chart
 
-def stacked_bubble_chart(DataFrame:pd.DataFrame,
-            size: List,
-            color: List,
-            stackedBy: List,
-            title: str = "",
-            width : str = "700px", 
-            height:str = "600px"
-            ):
-    ''' Plot Bubble chart.
+def vizzu_animate(obj,
+                config_dict : Dict = {} ,
+                style_dict : Dict = {},
+                ):
+    ''' Animate the rendered Ipyvizzu Object.
+    Parameters
+    -----------
+    obj : Ipyvizzu object / class
+    config_dict : Dict
+        Config method / argument ipyvizzu supports
+    style_dict : Dict
+        Styling method / arugment ipyvizzu supports
     '''
-    data = Data()
-    data.add_data_frame(DataFrame)
-    
-    chart = Chart(width=width, height=height, display="manual")
-    chart.animate(data)   
-
-    chart.animate(
-        Config.stackedBubble({
-            "size" : size,
-            "color" : color,
-            "stackedBy" : stackedBy,
-            "title" : title,
-        })
+    obj.animate(
+        Config(
+            config_dict
+        ),
+        Style(
+            style_dict
+        ),
     )
-    html = chart._repr_html_()
-    return html
+    return obj
 
-def stacked_radial_bar(DataFrame:pd.DataFrame,
-            angle: List,
-            radius: List,
-            stackedBy: List,
-            title: str = "",
-            width : str = "700px", 
-            height:str = "600px"
-            ):
-    ''' Plot Bubble chart.
-    '''
-    data = Data()
-    data.add_data_frame(DataFrame)
+def beta_vizzu_animate(obj,
+                x : None,
+                y = None,
+                size = None,
+                color = None,
+                label = None,
+                title = None,
+                geometry : str = "rectangle",
+                legend = None,
+                sort = "none",
+                reverse = False,
+                align = "none",
+                split = False,
+                noop = None,
+                tooltip = False,
+                ):
+    ''' Animate the rendered Ipyvizzu Object.
+    This function is deifferent from vizzu_animate as it accepts different
+    ipyvizzu specific arguments without creating separate dictionaries.
+    Parameters
+    -----------
+    obj : Ipyvizzu object / class
+    x : List or Dict
+        ipyvizzu channel specification. If dict use 'set' method
+    y : List or Dict
+        ipyvizzu channel specification
+    size : List or Dict
+        ipyvizzu channel specification
+    color : List or Dict
+        ipyvizzu channel specification
+    label : List or Dict
+        ipyvizzu channel specification    
+    title : String
+    geometry : String
+        default = rectangle 
+        Other options - area, line, circle
+    legend : List
+    sort : String 
+        "byValue" or "none"
+    reverse : Boolean
+    align : String
+        "center" "stretch"
+    split : Boolean
+        "True" or "False"
+    noop : None
+    tooltip : Boolean
+        True or False
+
+    Returns
+    ------
+    obj : ipyvizzu object   
     
-    chart = Chart(width=width, height=height, display="manual")
-    chart.animate(data)  
+    '''
+    config_dict = {
+         "channels": {
+                "x": x,
+                "y": y, 
+                "size": size,
+                "color": color,
+                "label": label,               
+            },
+            "title": title,
+            "geometry": geometry, 
+            "legend": legend, 
+            "sort": sort,
+            "reverse": reverse,
+            "align": align, 
+            "split": split,
+            "noop": noop,
 
-    chart.animate(
-        Config.radialStackedBar({
-            "angle" : angle,
-            "radius" : radius,
-            "stackedBy" : stackedBy,
-            "title" : title,
-        })
+    }
+    style_dict = {}
+    obj.animate(
+        Config(
+            config_dict
+        ),
+        Style(
+            style_dict
+        ),
     )
-    return chart._repr_html_()
-
-def vizzu_plot(HTML,
-            width : int = 700,
-            height : int = 600
-            ):
-    ''' Streamlit API to embed Vizzu HTML string 
-    '''
-    return html(HTML,width=width,height=height)
+    if tooltip:
+        obj.feature("tooltip", True)
     
+    return obj
