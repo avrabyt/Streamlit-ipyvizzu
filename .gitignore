@@ -2,7 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.DS_Store
+st_vizzu/__pycache__
 # C extensions
 *.so
 

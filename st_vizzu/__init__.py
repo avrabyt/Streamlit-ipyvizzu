@@ -6,19 +6,47 @@ from typing import Dict, List
 import pandas as pd
 from streamlit.components.v1 import html
 
-def vizzu_plot(HTML,
+# class st_vizzu:
+#     df = pd.DataFrame()
+#     data = Data()
+#     data.add_data_frame(df)
+#     chart_obj = Chart(display="manual")
+#     chart_obj.animate(data)
+    # def __init_(self,chart_obj):
+        # self.obj = chart_obj
+#         # self.data_f = data
+#     def show_plot(self,
+#                 chart_obj,
+#                 width : int = 700,
+#                 height : int = 600) :
+#         _html = chart_obj._repr_html_()
+#         return html(_html,width=width,height=height)
+        
+def create_vizzu_obj(df : pd.DataFrame):
+    ''' Create Vizzu Object 
+    '''        
+    data = Data()
+    data.add_data_frame(df)
+    obj = Chart(display="manual")
+    obj.animate(data)
+    return obj
+    
+def vizzu_plot(obj,
             width : int = 700,
             height : int = 600
             ):
-    ''' Streamlit API to embed Vizzu HTML string 
+    ''' Streamlit API to embed Vizzu object / class 
     Parameters
     -----------
-    HTML : String
+    obj : ipyvizzu object/class
     width : Int
-    height : Int    
+    height : Int 
+    Return
+    -----------
+    None   
     '''
-    return html(HTML,width=width,height=height)
-    
+    _html = obj._repr_html_()
+    return html(_html,width=width,height=height)   
 def bar_chart(DataFrame:pd.DataFrame,
             x: List,
             y: List,
@@ -134,7 +162,7 @@ def beta_vizzu_animate(obj,
     
     '''
     config_dict = {
-         "channels": {
+        "channels": {
                 "x": x,
                 "y": y, 
                 "size": size,
