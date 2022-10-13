@@ -19,8 +19,8 @@ def create_chart():
     data.add_data_frame(df)
     #@title Create the story
     story = Story(data=data)
+    #story.set_size("100%", "450px")
     story.set_size(800, 450)
-
     label_handler_method = "if(event.data.text.split(' ')[0] < 5) event.preventDefault()"
 
     story.add_event("plot-marker-label-draw", label_handler_method)
@@ -122,12 +122,13 @@ def create_chart():
 
     # story.play()
 
-    return story._repr_html_(),df
+    return story,story._repr_html_(),df
 
 
-CHART,df = create_chart()
-html(CHART, width=700, height=600)
-    
+obj,CHART,df = create_chart()
+with st.container():
+    html(CHART, width=800, height=600)
+
 from streamlit_extras.mention import mention
 with st.sidebar:
     mention(
