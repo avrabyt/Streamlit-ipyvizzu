@@ -5,22 +5,6 @@ from ipyvizzu import Chart, Data, Config, Style
 from typing import Dict, List
 import pandas as pd
 from streamlit.components.v1 import html
-
-# class st_vizzu:
-#     df = pd.DataFrame()
-#     data = Data()
-#     data.add_data_frame(df)
-#     chart_obj = Chart(display="manual")
-#     chart_obj.animate(data)
-    # def __init_(self,chart_obj):
-        # self.obj = chart_obj
-#         # self.data_f = data
-#     def show_plot(self,
-#                 chart_obj,
-#                 width : int = 700,
-#                 height : int = 600) :
-#         _html = chart_obj._repr_html_()
-#         return html(_html,width=width,height=height)
         
 def create_vizzu_obj(df : pd.DataFrame):
     ''' Create Vizzu Object 
@@ -192,3 +176,4 @@ def beta_vizzu_animate(obj,
         obj.feature("tooltip", True)
     
     return obj
+
