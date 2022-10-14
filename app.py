@@ -40,3 +40,7 @@ anim_obj2 = vizzu_animate(anim_obj,_dict)
 with st.container():
     st.button("Animate")
     vizzu_plot(anim_obj2)
+
+    
+with open(f'README.md', 'r') as f:           
+    st.markdown(f.read(),unsafe_allow_html=True)
