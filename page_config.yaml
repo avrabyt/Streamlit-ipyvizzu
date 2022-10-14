@@ -7,19 +7,24 @@ sections:
   - name: Examples ⤵️
     icon: 📊
     pages:
-      - page_name: Example 1 (Story)
+      - page_name: Example 1 (Basic)  
+        icon: 🫧
+        script_path: pages/Basic-Demo.py
+        layout: wide
+      - page_name: Example 2 (Story)
         icon: 🎥
         date_added: 2022-07-04  # If younger than 30 days, the page name will be augmented with a neat :new: emoji!
         script_path: pages/Story-Demo.py
         layout: wide
-      - page_name: Example 2 (Bubble-Chart)  # Explicit naming here overwrites the name inferred from script_path
+      - page_name: Example 3 (Bubble-Chart)  # Explicit naming here overwrites the name inferred from script_path
         icon: 🫧
         script_path: pages/BubbleChart.py
         layout: wide
-      - page_name : Example 3 (EDA)
+      - page_name : Example 4 (EDA)
         icon: 🧐
         script_path: pages/Netflix-EDA.py
         layout: wide
+
   - name: More Examples (Coming soon ...)
     icon: 💻
     pages:

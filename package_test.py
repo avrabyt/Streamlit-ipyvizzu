@@ -2,6 +2,7 @@ from st_vizzu import *
 import pandas as pd
 import streamlit as st
 
+st.code("st_vizzu version: " + st_vizzu.__version__)
 # Load Data
 df = pd.read_csv("Data/music_data.csv", index_col=0)
 with st.expander("Data",expanded=False):
