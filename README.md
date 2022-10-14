@@ -1,5 +1,4 @@
-# Streamlit-ipyvizzu
-# Stvizzu
+# Stvizzu (# Streamlit-ipyvizzu)
 [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support.
 
 <table>
