@@ -5,7 +5,24 @@ from ipyvizzu import Chart, Data, Config, Style
 from typing import Dict, List
 import pandas as pd
 from streamlit.components.v1 import html
-        
+##--------------------------
+
+class stvizzu:
+    def __init__(self,x,y,title):
+        self.x = x
+        self.y = y
+        self.title = title
+
+        # self.width = width
+        # self.height = height
+    def vizzu_show(self,obj,width : int = 700,
+            height : int = 600):
+        _html = obj._repr_html_()
+        return html(_html,width=width,height=height)     
+    def vizzu_plot(self,obj,kind=""):
+        pass
+
+##---------------------------
 def create_vizzu_obj(df : pd.DataFrame):
     ''' Create Vizzu Object 
     '''        
