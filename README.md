@@ -26,7 +26,7 @@ pip install st-vizzu
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://avrabyt-streamlit-ipyvizzu-app-f69fjd.streamlitapp.com)
 
-## Workflow Simplification 
+## Workflow simplification 
 
 1. Create ipyvizzu object using,
 `
