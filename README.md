@@ -1,30 +1,14 @@
 # Stvizzu (Streamlit-ipyvizzu)
 [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support.
 
-<table>
-    <tr>
-        <td>Latest Release</td>
-        <td>
-            <a href="https://pypi.org/project/st-vizzu/"/>
-            <img src="https://static.pepy.tech/badge/st-vizzu"/>
-        </td>
-    </tr>
-    <tr>
-        <td>PyPI Downloads</td>
-        <td>
-            <a href="https://pepy.tech/project/st-vizzu"/>
-            <img src="https://static.pepy.tech/badge/st-vizzu/month"/>
-        </td>
-    </tr>
-</table>
+[![PyPI version](https://badge.fury.io/py/st-vizzu.svg)](https://badge.fury.io/py/st-vizzu)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/st-vizzu)
+
 
 ## Installation 
 ```console
 pip install st-vizzu
 ```
-## Example
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://avrabyt-streamlit-ipyvizzu-app-f69fjd.streamlitapp.com)
 
 ## Workflow simplification 
 
@@ -76,6 +60,9 @@ with st.container(): # Maintaining the aspect ratio
 
 ```
 
+## Example
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://avrabyt-streamlit-ipyvizzu-app-f69fjd.streamlitapp.com)
 
 ## Animated charts ✨
 ![Animation](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/animation.gif)
