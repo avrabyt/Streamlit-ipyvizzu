@@ -28,15 +28,13 @@ pip install st-vizzu
 
 ## Workflow simplification 
 
-1. Create ipyvizzu object using,
-`
-create_vizzu_obj() 
-`
+1. **Create** ipyvizzu object using,
+`create_vizzu_obj()`
 or define preset ipyvizzu charts for example,bar charts using, `bar_chart()`
 
-2. Animate the charts using, _generalized_ function, `vizzu_animate()` or _argument specific_ function, `beta_vizzu_animate()`
+2. **Animate** the charts using, _generalized_ function, `vizzu_animate()` or _argument specific_ function, `beta_vizzu_animate()`
 
-3. Embed the charts within Streamlit front-end using, `vizzu_plot()`
+3. **Embed** the charts within Streamlit front-end using, `vizzu_plot()`
 
 ### Quickstart
 ```python
