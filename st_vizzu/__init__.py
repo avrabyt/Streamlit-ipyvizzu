@@ -1,20 +1,34 @@
 """
-ipyvizzu wrapper for Streamlit web-apps!
+ipyvizzu wrapper for Streamlit web-apps / intuitive usage!
+---------------------------------------
+Set of easy-to-use functions to make workflow simplier with ipyvizzu.
+
 """
 from ipyvizzu import Chart, Data, Config, Style
 from typing import Dict, List
 import pandas as pd
 from streamlit.components.v1 import html
-        
+from .version import __version__
+
+# Since we will be plotting DataFrame, object must have DataFrame as argument        
 def create_vizzu_obj(df : pd.DataFrame):
     ''' Create Vizzu Object 
+
+    Parameters
+    ----------
+    df: Pandas.DataFrame
+
+    Return
+    ----------
+    obj: ipyvizzu Object
     '''        
     data = Data()
     data.add_data_frame(df)
     obj = Chart(display="manual")
     obj.animate(data)
     return obj
-    
+
+# Streamlit wrapper    
 def vizzu_plot(obj,
             width : int = 700,
             height : int = 600
@@ -31,6 +45,8 @@ def vizzu_plot(obj,
     '''
     _html = obj._repr_html_()
     return html(_html,width=width,height=height)   
+
+# Preset plot functions
 def bar_chart(DataFrame:pd.DataFrame,
             x: List,
             y: List,
@@ -68,7 +84,9 @@ def bar_chart(DataFrame:pd.DataFrame,
         })
     )
     return chart
+# More preset functions to be added for easy usage
 
+# For dictionary based inputs and updates
 def vizzu_animate(obj,
                 config_dict : Dict = {} ,
                 style_dict : Dict = {},
@@ -92,6 +110,7 @@ def vizzu_animate(obj,
     )
     return obj
 
+# More arguments such as styling requires to be updated
 def beta_vizzu_animate(obj,
                 x : None,
                 y = None,
