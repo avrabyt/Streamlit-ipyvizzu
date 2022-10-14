@@ -5,3 +5,4 @@ streamlit
 numpy
 streamlit_extras
 pyyaml
+st-vizzu
