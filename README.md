@@ -31,6 +31,13 @@ df = pd.read_csv("Data/music_data.csv", index_col=0)
 # Create ipyvizzu Object with the DataFrame
 obj = create_vizzu_obj(df)
 
+# Preset plot usage
+bar_obj = bar_chart(df,
+            x = "Kinds", 
+            y = "Popularity",
+            title= "1.Using preset plot function `bar_chart()`"
+            )
+
 # Animate with defined arguments 
 anim_obj = beta_vizzu_animate( obj,
     x = "Genres",
