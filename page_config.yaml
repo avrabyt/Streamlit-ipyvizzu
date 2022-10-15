@@ -1,14 +1,14 @@
 pages:
-  - page_name: Streamlit-ipyvizzu 
+  - page_name: Streamlit-ipyvizzu (st-vizzu) 
     icon: 🎈
     script_path: app.py
     layout: wide  # By default, layout is 'centered' for all pages. See all the default values in page_config.py
 sections:
   - name: Examples ⤵️
-    icon: 📊
+    icon: 🔡
     pages:
       - page_name: Example 1 (Basic)  
-        icon: 🫧
+        icon: 📊
         script_path: pages/Basic-Demo.py
         layout: wide
       - page_name: Example 2 (Story)
@@ -17,16 +17,16 @@ sections:
         script_path: pages/Story-Demo.py
         layout: wide
       - page_name: Example 3 (Bubble-Chart)  # Explicit naming here overwrites the name inferred from script_path
-        icon: 🫧
+        icon: 💭
         script_path: pages/BubbleChart.py
         layout: wide
       - page_name : Example 4 (EDA)
-        icon: 🧐
+        icon: 👨🏾‍💻
         script_path: pages/Netflix-EDA.py
         layout: wide
 
   - name: More Examples (Coming soon ...)
-    icon: 💻
+    icon: 🔢
     pages:
       - page_name: Example three
         icon: 🦇
