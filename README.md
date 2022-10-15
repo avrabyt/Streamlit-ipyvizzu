@@ -71,10 +71,10 @@ with st.container(): # Maintaining the aspect ratio
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://hellostvizzu.streamlitapp.com/)
 
-## Animated charts ✨
+### Animated charts ✨
 ![Animation1](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/animation.gif)
 
-## Story-presentation ⌛️
+### Story-presentation ⌛️
 ![Story](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/story.gif)
 
 ## Resources 
