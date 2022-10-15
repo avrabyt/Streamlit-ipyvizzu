@@ -42,5 +42,18 @@ with st.container():
     vizzu_plot(anim_obj2)
 
     
-with open(f'README.md', 'r') as f:           
-    st.markdown(f.read(),unsafe_allow_html=True)
+# with open(f'README.md', 'r') as f:           
+#     st.markdown(f.read(),unsafe_allow_html=True)
+
+with open(f'README.md', 'r') as f:
+    readme_lines = f.readlines()
+    readme_buffer = []
+    resource_files = [os.path.basename(x) for x in glob.glob(f'Resources/*')]
+for line in readme_lines:
+    readme_buffer.append(line)
+    for image in resource_files:
+        if image in line:
+            st.markdown(' '.join(readme_buffer[:-1]))
+            st.image(f'Resources/{image}')
+            readme_buffer.clear()   
+    st.markdown(' '.join(readme_buffer))
