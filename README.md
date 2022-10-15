@@ -3,7 +3,9 @@
 **Create animated charts easily! A [ipyvizzu](https://github.com/vizzuhq/ipyvizzu)  wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support.**
 
 [![PyPI version](https://badge.fury.io/py/st-vizzu.svg)](https://badge.fury.io/py/st-vizzu)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/st-vizzu)
+[![Downloads](https://static.pepy.tech/personalized-badge/st-vizzu?period=month&units=international_system&left_color=black&right_color=green&left_text=Downloads)](https://pepy.tech/project/st-vizzu)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hellostvizzu.streamlitapp.com/)
+
 
 
 ## Installation 
