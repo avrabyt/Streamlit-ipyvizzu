@@ -6,7 +6,9 @@ from page_config import standard_page_widgets
 # Add this on top of any page to make mpa-config work!
 standard_page_widgets()
 
-st.subheader("Animate plots now with ease!")
+st.markdown(''' ### Create animated charts easily! 
+            A [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support. 
+            ''')
 # Load Data
 df = pd.read_csv("Data/music_data.csv", index_col=0)
 # Create ipyvizzu Object
