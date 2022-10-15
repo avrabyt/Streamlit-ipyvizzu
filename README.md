@@ -65,7 +65,7 @@ with st.container(): # Maintaining the aspect ratio
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://avrabyt-streamlit-ipyvizzu-app-f69fjd.streamlitapp.com)
 
 ## Animated charts ✨
-![Animation](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/animation.gif)
+![Animation1](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/animation.gif)
 
 ## Story-presentation ⌛️
-![Animation](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/story.gif)
+![Story](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/story.gif)
