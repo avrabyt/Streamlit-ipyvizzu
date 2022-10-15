@@ -39,7 +39,7 @@ bar_obj = bar_chart(df,
             )
 
 # Animate with defined arguments 
-anim_obj = beta_vizzu_animate( obj,
+anim_obj = beta_vizzu_animate( bar_obj,
     x = "Genres",
     y =  ["Popularity", "Kinds"],
     title = "Animate with beta_vizzu_animate () function",
