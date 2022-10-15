@@ -2,6 +2,10 @@ from st_vizzu import *
 import pandas as pd
 import streamlit as st
 
+from page_config import standard_page_widgets
+# Add this on top of any page to make mpa-config work!
+standard_page_widgets()
+
 st.subheader("Animate plots now with ease!")
 # Load Data
 df = pd.read_csv("Data/music_data.csv", index_col=0)
