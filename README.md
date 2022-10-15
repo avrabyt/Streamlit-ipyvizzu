@@ -1,4 +1,4 @@
-# Stvizzu (Streamlit-ipyvizzu)
+# Streamlit-ipyvizzu (st-vizzu)
 [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support.
 
 [![PyPI version](https://badge.fury.io/py/st-vizzu.svg)](https://badge.fury.io/py/st-vizzu)
