@@ -59,4 +59,4 @@ for line in readme_lines:
             st.markdown(' '.join(readme_buffer[:-1]))
             st.image(f'Resources/{image}')
             readme_buffer.clear()   
-    st.markdown(' '.join(readme_buffer))
+st.markdown(' '.join(readme_buffer))
