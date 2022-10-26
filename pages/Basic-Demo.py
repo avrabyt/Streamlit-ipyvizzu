@@ -3,9 +3,9 @@ import pandas as pd
 import ssl
 import streamlit as st 
 from page_config import standard_page_widgets
-from streamlit_extras.mention import mention
+# from streamlit_extras.mention import mention
 # Add this on top of any page to make mpa-config work!
-standard_page_widgets()
+# standard_page_widgets()
 
 @st.experimental_memo()
 def load_data(data_path:str):
@@ -21,6 +21,7 @@ def load_data(data_path:str):
     return pd.read_csv(data_path,sep=';')
 
 ssl._create_default_https_context = ssl._create_unverified_context  
+
 # App
 # st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
 st.sidebar.title("Basic-Demo")
