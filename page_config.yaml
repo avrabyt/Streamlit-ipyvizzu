@@ -24,6 +24,10 @@ sections:
         icon: 👨🏾‍💻
         script_path: pages/Netflix-EDA.py
         layout: wide
+      - page_name : Example 5 (Workarounds)
+        icon: 🍀
+        script_path: pages/Workarounds.py
+        layout: wide
 
   - name: More Examples (Coming soon ...)
     icon: 🔢
