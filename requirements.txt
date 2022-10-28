@@ -1,7 +1,7 @@
 ipyvizzu
 ipyvizzu-story
 pandas
-streamlit====1.13.0
+streamlit==1.13.0
 numpy
 streamlit_extras
 pyyaml
