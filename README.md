@@ -81,6 +81,10 @@ with st.container(): # Maintaining the aspect ratio
 ### Story-presentation ⌛️
 ![Story](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/story.gif)
 
+### ⭐️ Support me to keep this development going ☕️ 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/AvraCodes)
+
+
 ## Resources 
 - [Streamlit Multi-Page Configuration](https://github.com/blackary/mpa-config) - The demo app uses custom config file for Multipage Layout. Thanks to @blackary
 - [streamlit-extras](https://github.com/arnaudmiribel/streamlit-extras) - A Python library with useful Streamlit extras . Thanks @arnaudmiribel
