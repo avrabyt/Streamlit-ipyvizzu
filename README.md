@@ -34,7 +34,7 @@ df = pd.read_csv("Data/music_data.csv", index_col=0)
 # Create ipyvizzu Object with the DataFrame
 obj = create_vizzu_obj(df)
 
-# Preset plot usage
+# Preset plot usage. Preset plots works directly with DataFrames.
 bar_obj = bar_chart(df,
             x = "Kinds", 
             y = "Popularity",
