@@ -4,6 +4,7 @@
 
 [![PyPI version](https://badge.fury.io/py/st-vizzu.svg)](https://badge.fury.io/py/st-vizzu)
 [![Downloads](https://static.pepy.tech/personalized-badge/st-vizzu?period=month&units=international_system&left_color=black&right_color=green&left_text=Downloads)](https://pepy.tech/project/st-vizzu)
+[![Downloads](https://pepy.tech/badge/st-vizzu/month)](https://pepy.tech/project/st-vizzu)
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hellostvizzu.streamlitapp.com/)
 
 
