@@ -1,5 +1,5 @@
 pages:
-  - page_name: Streamlit-ipyvizzu (st-vizzu) 
+  - page_name: Hello! Streamlit-ipyvizzu (st-vizzu) 
     icon: 🎈
     script_path: app.py
     layout: wide  # By default, layout is 'centered' for all pages. See all the default values in page_config.py
