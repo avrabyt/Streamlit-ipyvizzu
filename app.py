@@ -1,11 +1,13 @@
 from st_vizzu import *
 import pandas as pd
 import streamlit as st
+from streamlit_extras.badges import badge
 # works with streamlit version streamlit==1.13.0
 from page_config import standard_page_widgets
 # Add this on top of any page to make mpa-config work!
 standard_page_widgets()
 
+badge(type="github", name="avrabyt/Streamlit-ipyvizzu")
 st.markdown(''' 
             ### Create animated charts easily! 
             A [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support. 
