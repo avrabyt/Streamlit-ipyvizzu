@@ -1,19 +1,29 @@
-
+import ssl
 import pandas as pd
 from ipyvizzu import Data, Config, Style
 from streamlit.components.v1 import html
 import streamlit as st
 from ipyvizzustory import Story, Slide, Step
 from st_vizzu import *
+# works with streamlit version streamlit==1.13.0
+from page_config import standard_page_widgets
+# Add this on top of any page to make mpa-config work!
+standard_page_widgets()
 
+ssl._create_default_https_context = ssl._create_unverified_context
 @st.cache
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
+def non_static_chart(df):
+    bar_obj = bar_chart(df,x="Language", y= "Value[%]", title= "A simple bar plot that will re-animate on clicks.")
+    static_html = bar_obj._repr_html_()
+    return static_html
+
 @st.cache(suppress_st_warning=True,allow_output_mutation=True)
 def static_chart(df):
-    bar_obj = bar_chart(df,x="Language", y= "Value[%]", title= "A simple bar plot.")
+    bar_obj = bar_chart(df,x="Language", y= "Value[%]", title= "A simple static bar plot at the Streamlit front-end.")
     static_html = bar_obj._repr_html_()
     return static_html
 
@@ -148,14 +158,15 @@ def create_story(df):
 
 # -- App ---- 
 st.title("A recent story of Programming Languages! 🌟")
-st.markdown(" #### A simple demonstration to avoid _'Streamlit-Reloading problem'_ . Using `st.cache()` function.")
+st.warning("A simple demonstration to avoid _'Streamlit-Reloading problem'_ .")
 
 
 st.sidebar.markdown('''
     # Sections
-    - [static chart here](#static-chart)
+    - [Reloading issue](#non-static-chart)
+    - [Static chart here](#static-chart)
     - [Animated charts here](#animated-charts)
-    - [ipyvizzu-story here](#visualize-data-story)
+    - [Ipyvizzu-story here](#visualize-data-story)
     - [Selected data](#selected-data)
     
     ''', unsafe_allow_html= True)
@@ -163,13 +174,26 @@ st.sidebar.markdown('''
 #Load Data
 story_data = pd.read_csv("https://raw.githubusercontent.com/petervidos/vizzu-pres/main/Prog_lang_popularity2.csv", dtype={"Year": str},)
 
+# The problem !!
+st.subheader('Non-static-chart')
+st.info("The chart is interactive with `Streamlit widget` changes. It reanimates on every widget (buttons,checkbox etc) click ...",icon="ℹ️" )
+with st.expander("Expand to view the non-Static Chart !", expanded=True):
+    with st.container():
+        ns_html = non_static_chart(story_data)
+        html(ns_html,width=900,height=450)
+        if st.button("I can Animate ♻️"):
+            st.info("As I said, chart will REANIMATE. It RELOADS on every interaction with the app ...", icon="ℹ️")
+
+
 # Static Demo - Because it depends on the loaded data
 st.subheader('Static-chart')
 st.info("The chart is NOT interactive with `Streamlit widget` changes. It stayts as it is forever ...",icon="ℹ️" )
-with st.expander("Expand to view the Static Chart !", expanded=False):
+with st.expander("Expand to view the Static Chart !", expanded=True):
     with st.container():
         s_html = static_chart(story_data)
-        html(s_html,width=600,height=650)
+        html(s_html,width=900,height=450)
+        if st.button("Try me to animate ♻️"):
+            st.info("Gotcha! As I said, the chart will NOT reanimate. Check data-dependent reanimation below 'Animated charts' .", icon="✖")
 
 # Working with Widgets
 sel_year = st.sidebar.selectbox("Tell me the year you want to visualize", options = story_data["Year"].unique())
@@ -192,20 +216,22 @@ st.sidebar.info("Data (rows) : " + str(len(sel_data)))
 v_html = create_chart(sel_data)
 st.subheader('Animated-charts')
 st.info("The chart is interactive with `Streamlit widget` change.  Reloads ONLY when there is a change in selected data. ",icon="✔️" )
-html(v_html,width=950,height=850)
+html(v_html,width=950,height=450)
+if st.button("Try to reanimate animated charts! ♻️"):
+    st.info("Gotcha! As I said, the chart will NOT reanimate. Tweak `year` and `language` : it may reanimate. ", icon="✖")
 st.subheader('Visualize-data-story')
 st.info("The story is NOT interactive with `Streamlit widget` changes. Treat it as a story of the whole data. Press respective `button(s)` to generate and download.",icon="ℹ️" )
 if st.sidebar.button("Generate Story"):
     story_html, slides = create_story(story_data)    
     with st.container():
-        html(story_html, width=800, height=600)        
+        html(story_html, width=800, height=500)        
         st.sidebar.download_button(label = 'Download Story',
                         data = slides.to_html(),
                         file_name = "my_story.html",
                         )
         st.success("Don't forget to download the story!",icon="✅")
 else:
-    st.warning("Press  `Generate Story` button view the story.")
+    st.warning("Press  `Generate Story` button to view the story.")
 # Display dataframe
 st.subheader('Selected-data')
 if st.sidebar.checkbox("Show me the data"):  
