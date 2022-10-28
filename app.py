@@ -8,11 +8,11 @@ from page_config import standard_page_widgets
 standard_page_widgets()
 
 badge(type="github", name="avrabyt/Streamlit-ipyvizzu")
-st.markdown(''' 
-            ### Create animated charts easily! 
-            A [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support. 
+# st.markdown(''' 
+#             ### Create animated charts easily! 
+#             A [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support. 
             
-            ''')
+#             ''')
 # Load Data
 df = pd.read_csv("Data/music_data.csv", index_col=0)
 # Create ipyvizzu Object
@@ -46,10 +46,12 @@ _dict = {"size": {"set": "Popularity"},
 anim_obj2 = vizzu_animate(anim_obj,_dict)
 # Visualize
 with st.container():
+    vizzu_plot(anim_obj2) 
     st.button("Animate ♻️ ")
-    vizzu_plot(anim_obj2)    
-with st.expander("Data",expanded=False):
-    df
+       
+# with st.expander("Data",expanded=False):
+#     df
+
 # Updating Readme 
 import glob
 import os
