@@ -1,9 +1,7 @@
 from st_vizzu import *
 import pandas as pd
 import streamlit as st
-from streamlit_extras.badges import badge
-
-from st_pages import Page,Section, show_pages, add_page_title
+from st_pages import Page,show_pages, add_page_title
 
 # Optional -- adds the title and icon to the current page
 add_page_title()
@@ -21,12 +19,6 @@ show_pages(
     ]
 )
 
-badge(type="github", name="avrabyt/Streamlit-ipyvizzu")
-# st.markdown(''' 
-#             ### Create animated charts easily! 
-#             A [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) wrapper for intuitive usage of ipyvizzu functions and Streamlit embed support. 
-            
-#             ''')
 # Load Data
 df = pd.read_csv("Data/music_data.csv", index_col=0)
 # Create ipyvizzu Object
@@ -81,3 +73,25 @@ for line in readme_lines:
             st.image(f'Resources/{image}')
             readme_buffer.clear()   
 st.markdown(' '.join(readme_buffer))
+
+# Sidebar
+
+st.sidebar.header(":sparkles: Install")
+st.sidebar.code('''pip install st-vizzu''')
+
+
+st.sidebar.markdown(
+    "[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/avrabyt/Streamlit-ipyvizzu)  "
+    
+    "[![PyPI version](https://badge.fury.io/py/st-vizzu.svg)](https://badge.fury.io/py/st-vizzu)"
+)
+st.sidebar.markdown(
+    '''
+    [![Follow](https://img.shields.io/twitter/follow/Avra_b?style=social)](https://www.twitter.com/Avra_b)
+    [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee--yellow.svg?logo=buy-me-a-coffee&logoColor=orange&style=social)](https://www.buymeacoffee.com/AvraCodes) 
+    
+    -------------
+    # Video Tutorials : 
+    '''
+)
+st.sidebar.video('https://youtu.be/HEKmXqie-nA')
