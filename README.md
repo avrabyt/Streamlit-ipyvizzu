@@ -88,6 +88,10 @@ with st.container(): # Maintaining the aspect ratio
 ### ipyvizzu-notebook📒 
 ![notebook](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/d6fcc7232b118898de84cf5c329c0f0791a6b258/Resources/ipyvizzu%20teaser.gif)
 
+## Video Tutorials
+
+#### [Part 1](https://youtu.be/jUh923Z4fuk)
+[![Convert Excel Sheets to Animated Plots in Python using IPYVIZZU|PART 1](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/3415cb08011e76c78a5f35789659cb5f71014979/Resources/Teaser-2.png)](https://youtu.be/jUh923Z4fuk)
 
 ## Resources 
 - [streamlit-extras](https://github.com/arnaudmiribel/streamlit-extras) 
