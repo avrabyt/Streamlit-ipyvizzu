@@ -87,7 +87,8 @@ with st.container(): # Maintaining the aspect ratio
 
 
 ## Resources 
-- [streamlit-extras](https://github.com/arnaudmiribel/streamlit-extras) - A Python library with useful Streamlit extras . Thanks @arnaudmiribel
+- [streamlit-extras](https://github.com/arnaudmiribel/streamlit-extras) 
 - [ipyvizzu](https://github.com/vizzuhq/ipyvizzu)
+- [Streamlit-Pages](https://github.com/blackary/st_pages)
 - [Streamlit](https://discuss.streamlit.io/)
 
