@@ -177,7 +177,7 @@ with st.expander("Expand to view the non-Static Chart !", expanded=True):
     with st.container():
         ns_html = non_static_chart(story_data)
         html(ns_html,width=900,height=450)
-        if st.button("I can Animate ♻️"):
+        if st.button("I can Animate ♻️", type='primary'):
             st.info("As I said, chart will REANIMATE. It RELOADS on every interaction with the app ...", icon="ℹ️")
 
 
@@ -188,7 +188,7 @@ with st.expander("Expand to view the Static Chart !", expanded=True):
     with st.container():
         s_html = static_chart(story_data)
         html(s_html,width=900,height=450)
-        if st.button("Try me to animate ♻️"):
+        if st.button("Try me to animate ♻️", type='primary'):
             st.info("Gotcha! As I said, the chart will NOT reanimate. Check data-dependent reanimation below 'Animated charts' .", icon="✖")
 
 # Working with Widgets
@@ -213,11 +213,11 @@ v_html = create_chart(sel_data)
 st.subheader('Animated-charts')
 st.info("The chart is interactive with `Streamlit widget` change.  Reloads ONLY when there is a change in selected data. ",icon="✔️" )
 html(v_html,width=950,height=450)
-if st.button("Try to reanimate animated charts! ♻️"):
+if st.button("Try to reanimate animated charts! ♻️", type='primary'):
     st.info("Gotcha! As I said, the chart will NOT reanimate. Tweak `year` and `language` : it may reanimate. ", icon="✖")
 st.subheader('Visualize-data-story')
 st.info("The story is NOT interactive with `Streamlit widget` changes. Treat it as a story of the whole data. Press respective `button(s)` to generate and download.",icon="ℹ️" )
-if st.sidebar.button("Generate Story"):
+if st.sidebar.button("Generate Story", type='primary'):
     story_html, slides = create_story(story_data)    
     with st.container():
         html(story_html, width=800, height=500)        

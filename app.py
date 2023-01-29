@@ -53,7 +53,7 @@ anim_obj2 = vizzu_animate(anim_obj,_dict)
 # Visualize
 with st.container():
     vizzu_plot(anim_obj2) 
-    st.button("Animate ♻️ ")
+    st.button("Animate ♻️ ",type='primary')
        
 # with st.expander("Data",expanded=False):
 #     df

@@ -22,7 +22,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 # App
 # st.set_page_config(page_title="Streamlit-ipyvizzu", layout="centered")
 st.sidebar.title("Basic-Demo")
-st.sidebar.button("Animate ♻️ ")
+st.sidebar.button("Animate ♻️ ",type='primary')
 
 # Load Data
 file_path = 'Data/eu_regions.csv'

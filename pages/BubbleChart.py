@@ -74,4 +74,4 @@ with st.expander("DataFrame ⤵️"):
     st.dataframe(filtered_df)
 _CHART = BubbleChart(filtered_df)
 html(_CHART, width=700, height=600)
-st.sidebar.button("Animate ♻️")
+st.sidebar.button("Animate ♻️", type='primary')

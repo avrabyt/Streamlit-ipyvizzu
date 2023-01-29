@@ -18,7 +18,7 @@ data['year_added'] = data['year_added'].apply(lambda x : x if x != 'NULL' else '
 data['year_added'] = data['year_added'].apply(int)
 movie = data[data['type'] == 'Movie']
 tv_show = data[data['type'] == 'TV Show']
-st.sidebar.button("Animate ♻️")
+st.sidebar.button("Animate ♻️", type='primary')
 country_data = data['country']
 country_counting = pd.Series(dict(Counter(','.join(country_data).replace(' ,',',').replace(', ',',').split(',')))).sort_values(ascending=False)
 country_counting.drop(['NULL'], axis=0, inplace=True)
