@@ -2,10 +2,24 @@ from st_vizzu import *
 import pandas as pd
 import streamlit as st
 from streamlit_extras.badges import badge
-# works with streamlit version streamlit==1.13.0
-from page_config import standard_page_widgets
-# Add this on top of any page to make mpa-config work!
-standard_page_widgets()
+
+from st_pages import Page,Section, show_pages, add_page_title
+
+# Optional -- adds the title and icon to the current page
+add_page_title()
+
+# Specify what pages should be shown in the sidebar, and what their titles and icons
+# should be
+show_pages(
+    [
+        Page("app.py", "st-vizzu (Streamlit-ipyvizzu)", "🎈️"),
+        Page("pages/Basic-Demo.py", "Example 1 (Basic)", "📊"),
+        Page("pages/Story-Demo.py","Example 2 (Story)","🎥"),
+        Page("pages/BubbleChart.py","Example 3 (Bubble-Chart)","💭" ),
+        Page("pages/Netflix-EDA.py","Example 4 (EDA)","👨🏾‍💻"),
+        Page("pages/Workarounds.py","Example 5 (Workarounds)","🍀")
+    ]
+)
 
 badge(type="github", name="avrabyt/Streamlit-ipyvizzu")
 # st.markdown(''' 

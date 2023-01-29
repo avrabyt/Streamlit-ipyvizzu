@@ -87,7 +87,6 @@ with st.container(): # Maintaining the aspect ratio
 
 
 ## Resources 
-- [Streamlit Multi-Page Configuration](https://github.com/blackary/mpa-config) - The demo app uses custom config file for Multipage Layout. Thanks to @blackary
 - [streamlit-extras](https://github.com/arnaudmiribel/streamlit-extras) - A Python library with useful Streamlit extras . Thanks @arnaudmiribel
 - [ipyvizzu](https://github.com/vizzuhq/ipyvizzu)
 - [Streamlit](https://discuss.streamlit.io/)

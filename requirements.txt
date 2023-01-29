@@ -1,8 +1,9 @@
 ipyvizzu
 ipyvizzu-story
 pandas
-streamlit==1.13.0
+streamlit
 numpy
 streamlit_extras
 pyyaml
 st-vizzu
+st-pages

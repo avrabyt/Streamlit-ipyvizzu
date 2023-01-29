@@ -5,10 +5,6 @@ from streamlit.components.v1 import html
 import streamlit as st
 from ipyvizzustory import Story, Slide, Step
 from st_vizzu import *
-# works with streamlit version streamlit==1.13.0
-from page_config import standard_page_widgets
-# Add this on top of any page to make mpa-config work!
-standard_page_widgets()
 
 ssl._create_default_https_context = ssl._create_unverified_context
 @st.cache
