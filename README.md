@@ -86,7 +86,7 @@ with st.container(): # Maintaining the aspect ratio
 ![Story](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/story.gif)
 
 ### ipyvizzu-notebook📒 
-![notebook](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/d6fcc7232b118898de84cf5c329c0f0791a6b258/Resources/ipyvizzu%20teaser.gif)
+![notebook](https://github.com/avrabyt/Streamlit-ipyvizzu/blob/main/Resources/ipyvizzu%20teaser.gif)
 
 ## Video Tutorials
 
