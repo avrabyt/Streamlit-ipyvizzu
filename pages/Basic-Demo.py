@@ -5,7 +5,7 @@ import streamlit as st
 from streamlit_extras.mention import mention
 
 
-@st.experimental_memo()
+st.cache_data
 def load_data(data_path:str):
     ''' Load the data
     Parameter
