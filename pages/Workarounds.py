@@ -17,7 +17,7 @@ def non_static_chart(df):
     static_html = bar_obj._repr_html_()
     return static_html
 
-@st.cache(suppress_st_warning=True,allow_output_mutation=True)
+@st.cache_data
 def static_chart(df):
     bar_obj = bar_chart(df,x="Language", y= "Value[%]", title= "A simple static bar plot at the Streamlit front-end.")
     static_html = bar_obj._repr_html_()
@@ -56,7 +56,7 @@ def create_chart(data):
     vizzu_html = anim_obj2._repr_html_()
     return vizzu_html
 
-@st.cache(suppress_st_warning=True,allow_output_mutation=True)
+@st.cache_data
 def create_story(df):   
     # initialize chart
     data = Data()
