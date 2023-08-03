@@ -7,7 +7,7 @@ from ipyvizzustory import Story, Slide, Step
 from st_vizzu import *
 
 ssl._create_default_https_context = ssl._create_unverified_context
-@st.cache
+@st.cache_data
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
@@ -23,7 +23,7 @@ def static_chart(df):
     static_html = bar_obj._repr_html_()
     return static_html
 
-@st.cache(suppress_st_warning=True,allow_output_mutation=True)
+@st.cache_data
 def create_chart(data):
     obj = create_vizzu_obj(data)
     title_Str = "Use of programming languages by data scientists."
