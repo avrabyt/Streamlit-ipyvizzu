@@ -49,7 +49,7 @@ def BubbleChart(df:pd.DataFrame):
     )
     return chart._repr_html_()
 
-@st.experimental_memo()
+@st.cache_data
 def load_data(data_path:str):
     ''' Load the data
     Parameter
